@@ -14,6 +14,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+APP_ROOT = os.path.abspath(os.path.dirname(__name__))
+PROJECT_ROOT = os.path.join(APP_ROOT, 'project')
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 
@@ -26,6 +28,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     
+    'wagtail.contrib.settings',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -67,7 +70,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_DIR, 'templates'),
+            (os.path.join(PROJECT_ROOT, 'templates')),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -141,13 +144,13 @@ STATICFILES_FINDERS = [
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(APP_ROOT, 'static')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
 
 
