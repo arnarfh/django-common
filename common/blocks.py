@@ -9,8 +9,17 @@ TEXT_FEATURES = ["bold", "italic", "ol", "ul", "link", "document-link", "embed"]
 # Simple, basic Text Editor features
 SIMPLE_TEXT_FEATURES = ["bold", "italic", "link"]
 
+POSITION_CHOICES = [("left", "Left"),("full", "Full"),("right", "Right")]
 
-class HeadingBlock(wagtail_blocks.StructBlock):
+class BaseBlock(wagtail_blocks.StructBlock):
+    position =  wagtail_blocks.ChoiceBlock(
+        label="Block position",
+        choices=POSITION_CHOICES,
+        default="full",
+        required=False
+    )
+
+class HeadingBlock(BaseBlock):
     """
     Block for a heading.
     """
@@ -28,7 +37,7 @@ class HeadingBlock(wagtail_blocks.StructBlock):
         icon = "title"
         template = "content/blocks/heading.html"
 
-class TextBlock(wagtail_blocks.StructBlock):
+class TextBlock(BaseBlock):
     """
     Block for general text.
     """
@@ -46,7 +55,7 @@ class TextBlock(wagtail_blocks.StructBlock):
         icon = "pilcrow"
         template = "content/blocks/text.html"
 
-class ImageBlock(wagtail_blocks.StructBlock):
+class ImageBlock(BaseBlock):
     """
     Block for image, and caption.
     """
@@ -55,7 +64,6 @@ class ImageBlock(wagtail_blocks.StructBlock):
     caption = wagtail_blocks.RichTextBlock(
         features=SIMPLE_TEXT_FEATURES,
         label="Caption",
-        required=False
     )
 
     class Meta:
@@ -65,7 +73,7 @@ class ImageBlock(wagtail_blocks.StructBlock):
 
 LINK_STYLE_CHOICES = [("link", "Link"), ("button", "Button")]
 
-class LinkBlock(wagtail_blocks.StructBlock):
+class LinkBlock(BaseBlock):
     """
     Block for internal image link.
     """
@@ -88,7 +96,7 @@ class LinkBlock(wagtail_blocks.StructBlock):
         icon = "link"
         template = "content/blocks/internal_link.html"
 
-class ExternalLinkBlock(wagtail_blocks.StructBlock):
+class ExternalLinkBlock(BaseBlock):
     """
     Block for external links.
     """
