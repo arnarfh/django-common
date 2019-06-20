@@ -28,6 +28,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'common.apps.CommonConfig',
     
+    'wagtail.contrib.modeladmin',
     'wagtail.contrib.settings',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.admin',
     'wagtail.core',
+    'wagtailtrans',
 
     'modelcluster',
     'taggit',
@@ -62,6 +64,7 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    'wagtailtrans.middleware.TranslationMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
