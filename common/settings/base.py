@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'common.context_processors.add_env_to_context'
             ],
         },
     },
@@ -156,6 +158,7 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 MEDIA_URL = '/media/'
 
+SITE_ID = 1
 
 # Wagtail settings
 
@@ -166,3 +169,5 @@ WAGTAIL_SITE_NAME = "project"
 BASE_URL = 'http://example.com'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+GA_CODE = ''
