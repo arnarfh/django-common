@@ -177,3 +177,10 @@ GA_CODE = ''
 #AWS & Digitalocean spaces
 AWS_STORAGE_BUCKET_NAME = ''
 DO_SPACE_ENDPOINT = ''
+AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
+AWS_DEFAULT_ACL = "public-read"
+AWS_AUTO_CREATE_BUCKET = True
+
+LOCALE_PATHS = [os.path.join(PROJECT_ROOT, "locale")]
+
+SENTRY_DSN = ''
