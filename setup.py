@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='django-common',
-      version='1.3',
+      version='1.8',
       description='Django common package',
       packages=find_packages(),
      )
