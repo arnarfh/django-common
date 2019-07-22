@@ -85,6 +85,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'common.context_processors.add_env_to_context',
                 'common.context_processors.add_ga_code_to_context',
+                'common.context_processors.add_static_endpoint_to_context',
             ],
         },
     },
@@ -172,3 +173,7 @@ BASE_URL = 'http://example.com'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 GA_CODE = ''
+
+#AWS & Digitalocean spaces
+AWS_STORAGE_BUCKET_NAME = ''
+DO_SPACE_ENDPOINT = ''
