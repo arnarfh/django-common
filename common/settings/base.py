@@ -86,6 +86,7 @@ TEMPLATES = [
                 'common.context_processors.add_env_to_context',
                 'common.context_processors.add_ga_code_to_context',
                 'common.context_processors.add_static_endpoint_to_context',
+                'wagtail.contrib.settings.context_processors.settings',
             ],
         },
     },
