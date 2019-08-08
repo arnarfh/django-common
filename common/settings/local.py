@@ -6,3 +6,9 @@ DEBUG = True
 INSTALLED_APPS += (
     'wagtail.contrib.styleguide',
 )
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
