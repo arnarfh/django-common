@@ -134,8 +134,14 @@ class ContentBlock(wagtail_blocks.StreamBlock):
         template="content/blocks/documents.html",
         icon="doc-empty"
     )
-    embed = EmbedBlock(label="Embed")
-    html = wagtail_blocks.RawHTMLBlock(label="HTML")
+    embed = EmbedBlock(
+        label="Embed",
+        template="content/blocks/embed.html"
+    )
+    html = wagtail_blocks.RawHTMLBlock(
+        label="HTML",
+        template="content/blocks/raw_html.html"
+    )
 
     class Meta:
         label = "Content"
