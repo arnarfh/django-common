@@ -1,4 +1,4 @@
-from storages.backends.s3boto import S3BotoStorage as S3BotoStorageOriginal
+from storages.backends.s3boto3 import S3BotoStorage as S3BotoStorageOriginal
 from django.contrib.staticfiles.storage import ManifestFilesMixin
 
 
