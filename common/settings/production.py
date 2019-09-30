@@ -13,6 +13,6 @@ INSTALLED_APPS += ["storages"]
 
 # Storage location
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATICFILES_STORAGE = "common.storage.S3BotoStorage"
 
 STATIC_URL = "https://%s/" % (DO_SPACE_ENDPOINT)
