@@ -10,13 +10,11 @@ def add_ga_code_to_context(request):
     return {"ga_code": GA_CODE}
 
 def add_static_endpoint_to_context(request):
-    if os.getenv("ENV") == "production":
+    if os.getenv("ENV") =! "production":
         from project.settings.production import AWS_STORAGE_BUCKET_NAME, DO_SPACE_ENDPOINT
     if os.getenv("ENV") == "staging":
         from project.settings.staging import AWS_STORAGE_BUCKET_NAME, DO_SPACE_ENDPOINT
         
-        end = "https://" + AWS_STORAGE_BUCKET_NAME + "." + DO_SPACE_ENDPOINT + "/"
+    end = "https://" + AWS_STORAGE_BUCKET_NAME + "." + DO_SPACE_ENDPOINT + "/"
     
-        return {"static_files_public": end}
-    
-    return {}
+    return {"static_files_public": end}
