@@ -45,7 +45,7 @@ class TextBlock(BaseBlock):
     text = wagtail_blocks.RichTextBlock(features=TEXT_FEATURES)
     style = wagtail_blocks.ChoiceBlock(
         label="Style",
-        choices=[("text", "Text"), ("lead", "Lead"), ("quote", "Quote"), ("code", "Code")],
+        choices=[("text", "Text"), ("lead", "Lead"), ("quote", "Quote"), ("poem", "Poem"), ("code", "Code")],
         default="text",
         required=False
     )
