@@ -64,6 +64,7 @@ class ImageBlock(BaseBlock):
     caption = wagtail_blocks.RichTextBlock(
         features=SIMPLE_TEXT_FEATURES,
         label="Caption",
+        required=False,
     )
 
     class Meta:
