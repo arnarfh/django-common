@@ -67,7 +67,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-    'wagtailtrans.middleware.TranslationMiddleware',
+    #'wagtailtrans.middleware.TranslationMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
