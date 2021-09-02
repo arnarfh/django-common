@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.admin',
     'wagtail.core',
-    #'wagtailtrans',
+    'wagtailtrans',
+    'wagtail_localize',
+    'wagtail_localize.locales',
 
     'modelcluster',
     'taggit',
@@ -68,6 +70,7 @@ MIDDLEWARE = [
 
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     #'wagtailtrans.middleware.TranslationMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'project.urls'
@@ -141,6 +144,14 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
+
+WAGTAIL_I18N_ENABLED = True
+
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES = [
+    ('es', "Spanish"),
+    ('en', "English"),
+]
+
 
 USE_TZ = True
 
