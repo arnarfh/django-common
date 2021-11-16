@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.admin',
     'wagtail.core',
-    'wagtailtrans',
     'wagtail_localize',
     'wagtail_localize.locales',
 
