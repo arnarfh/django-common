@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'wagtail.images',
     'wagtail.admin',
     'wagtail.core',
-    'wagtail_localize',
-    'wagtail_localize.locales',
+    'wagtail.locales',
+    #'wagtail_localize',
+    #'wagtail_localize.locales',
 
     'modelcluster',
     'taggit',
