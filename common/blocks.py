@@ -1,4 +1,4 @@
-from wagtail.core import blocks as wagtail_blocks
+from wagtail import blocks as wagtail_blocks
 from wagtail.embeds.blocks import EmbedBlock
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.documents.blocks import DocumentChooserBlock

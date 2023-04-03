@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'wagtail.documents',
     'wagtail.images',
     'wagtail.admin',
-    'wagtail.core',
+    'wagtail',
     'wagtail.locales',
     #'wagtail_localize',
     #'wagtail_localize.locales',
@@ -188,6 +188,7 @@ WAGTAILIMAGES_MAX_UPLOAD_SIZE = 30 * 1024 * 1024
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+WAGTAIL_BASE_URL = BASE_URL
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
